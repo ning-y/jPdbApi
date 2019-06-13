@@ -22,10 +22,10 @@ import java.util.List;
 
 public class Query {
     public static final int KEYWORD_QUERY = 0;
-    private static final String API_URL = "http://www.rcsb.org/pdb/rest/search";
-    private int type;
-    private String keywords;
+    private static final String API_URL = "https://www.rcsb.org/pdb/rest/search";
     private Document xml;
+    private String keywords;
+    private int type;
 
     public Query(int type, String keywords) throws ParserConfigurationException {
         this.type = type;
