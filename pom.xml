@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.ningyuan</groupId>
   <artifactId>jPdbApi</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>jPdbApi</name>
   <description>Java wrapper for the RCSB PDB RESTful Web Service</description>
@@ -34,9 +34,15 @@
 
   <distributionManagement>
     <repository>
-      <id>ossrh</id>
+      <id>releases</id>
+      <name>Releases</name>
       <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
+    <snapshotRepository>
+      <id>snapshots</id>
+      <name>Snapshots</name>
+      <url>http://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
   </distributionManagement>
 
   <profiles>
