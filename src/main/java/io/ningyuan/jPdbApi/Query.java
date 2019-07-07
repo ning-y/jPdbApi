@@ -19,6 +19,7 @@ import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Query {
     public static final int KEYWORD_QUERY = 0;
@@ -48,14 +49,16 @@ public class Query {
     public List<String> execute() throws IOException {
         String xmlEncoded = URLEncoder.encode(this.toString(), "UTF-8");
         InputStream inputStream = executePost(xmlEncoded);
-        List<String> resultIds = new ArrayList<>();
-        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+        Scanner scanner = new Scanner(inputStream, "UTF-8");
 
-        String line;
-        while ((line = reader.readLine()) != null) {
-            resultIds.add(line);
+        List<String> resultIds = new ArrayList<>();
+        while (scanner.hasNextLine()) {
+            String newResult = scanner.nextLine();
+            // quirk of RCSB PDB search api---empty results return 'null'
+            if (!newResult.equals("null")) {
+                resultIds.add(newResult);
+            }
         }
-        reader.close();
 
         return resultIds;
     }
