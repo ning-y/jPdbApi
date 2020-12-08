@@ -5,13 +5,10 @@
 ](https://maven-badges.herokuapp.com/maven-central/io.ningyuan/jPdbApi)
 
 A Java wrapper for the [RCSB PDB RESTful Web Service](https://www.rcsb.org/pdb/software/rest.do).
-
-## Example
-
-TODO (a new version is under development).
+I wrote this module specifically for the Android application [*Palantir*](https://github.com/ning-y/palantir), so I've only implemented what was necessary.
+Contributions are extremely welcome!
 
 ## Development guide
-
 
 ### Testing
 
@@ -19,7 +16,7 @@ TODO (a new version is under development).
 To run a single test, use the `-Dtest=ClassName#methodName` flag, e.g.
 
 ```
-mvn test -Dtest=TestForRuntimeErrors#nextPageWorksOnline
+mvn test -Dtest=TextSearchTests#nextPageWorksOnline
 ```
 
 In the event that several tests seem to fail with a `SocketTimeoutException`, check if the RCSB search service is online by running [this simple query](http://search.rcsb.org/rcsbsearch/v1/query?json=%7B%22query%22:%7B%22type%22:%22terminal%22,%22service%22:%22text%22,%22parameters%22:%7B%22attribute%22:%22exptl.method%22,%22operator%22:%22exact_match%22,%22value%22:%22ELECTRON%20MICROSCOPY%22%7D%7D,%22return_type%22:%22entry%22%7D) listed on the RCSB ["Search API Documentation"](http://search.rcsb.org/#basic-queries) page.

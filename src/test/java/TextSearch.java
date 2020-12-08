@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import io.ningyuan.jPdbApi.TextSearch;
 import java.io.IOException;
 
-class TestForRuntimeErrors {
+class TextSearchTests {
     @Test
     void constructor1Works() {
         TextSearch textSearch = new TextSearch("cyclosporine");
