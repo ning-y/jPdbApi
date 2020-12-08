@@ -8,6 +8,22 @@ A Java wrapper for the [RCSB PDB RESTful Web Service](https://www.rcsb.org/pdb/s
 I wrote this module specifically for the Android application [*Palantir*](https://github.com/ning-y/palantir), so I've only implemented what was necessary.
 Contributions are extremely welcome!
 
+## Example
+
+```java
+try {
+    TextSearch textSearch = new TextSearch(queryString);
+    String[] results = textSearch.getPage();  // PDB IDs
+    for (String pdbId : results) {
+        Pdb pdb = new Pdb(pdbId);
+        pdb.load()
+        System.out.println(pdbId.getTitle());
+    }
+} catch (IOException e) {
+    e.printStackTrace();
+}
+```
+
 ## Development guide
 
 ### Testing
