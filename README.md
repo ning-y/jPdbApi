@@ -4,7 +4,7 @@
 ](https://maven-badges.herokuapp.com/maven-central/io.ningyuan/jPdbApi/badge.svg)
 ](https://maven-badges.herokuapp.com/maven-central/io.ningyuan/jPdbApi)
 
-A Java wrapper for the [RCSB PDB RESTful Web Service](https://www.rcsb.org/pdb/software/rest.do).
+A Java wrapper for the [RCSB PDB APIs](https://www.rcsb.org/pages/webservices).
 I wrote this module specifically for the Android application [*Palantir*](https://github.com/ning-y/palantir), so I've only implemented what was necessary.
 Contributions are extremely welcome!
 
